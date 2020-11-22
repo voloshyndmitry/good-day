@@ -13,37 +13,33 @@ export default function CustomButton(props: IProps) {
   const buttonStyle = getButtonStyle(customStyle);
 
   return (
-    <View style={styles.containerStyle}>
-      <TouchableHighlight onPress={onClick}>
-        <View style={buttonStyle}>
-          <Text
-            style={{ color: "inherit", fontSize: customStyle?.fontSize || 12 }}
-          >
-            {text}
-          </Text>
-        </View>
-      </TouchableHighlight>
-    </View>
+    <TouchableHighlight onPress={onClick} style={buttonStyle}>
+      <View>
+        <Text
+          style={{
+            color: customStyle?.color || COLORS.gray,
+            fontSize: customStyle?.fontSize || 12,
+          }}
+        >
+          {text}
+        </Text>
+      </View>
+    </TouchableHighlight>
   );
 }
 
 const getButtonStyle = (customStyle: any = {}) => {
   const buttonStyle = {
+    flex: 1,
     alignItems: "center",
     backgroundColor: COLORS.gray,
     padding: 10,
+    borderRadius: 5,
     ...customStyle,
   };
   const styles = StyleSheet.create({
     buttonStyle,
   });
+
   return styles.buttonStyle;
 };
-
-const styles = StyleSheet.create({
-  containerStyle: {
-    flex: 1,
-    justifyContent: "center",
-    paddingHorizontal: 10,
-  },
-});

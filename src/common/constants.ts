@@ -4,6 +4,6 @@ interface IColors {
 
 export const COLORS: IColors = {
   green: "#2ecc71",
-  red: "#e74c3c",
-  gray: "#95a5a6",
+  red: "#ea7f74",
+  gray: "#76e2a4",
 };
