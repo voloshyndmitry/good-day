@@ -42,7 +42,7 @@ export default function Header({ actions }: IProps) {
       <CustomButton
         customStyle={{
           color: COLORS.green,
-          backgroundColor: "#fff",
+          backgroundColor: COLORS.white,
           borderWidth: 1,
           borderColor: COLORS.green,
           marginHorizontal: 10,
@@ -54,7 +54,7 @@ export default function Header({ actions }: IProps) {
       <CustomButton
         customStyle={{
           color: COLORS.red,
-          backgroundColor: "#fff",
+          backgroundColor: COLORS.white,
           borderWidth: 1,
           borderColor: COLORS.red,
           marginHorizontal: 10,
@@ -85,6 +85,8 @@ const styles = StyleSheet.create({
   },
   inputStyle: {
     width: "100%",
+    fontSize: 25,
+    color: COLORS.black,
     borderBottomWidth: 1,
     borderBottomColor: COLORS.green,
   },

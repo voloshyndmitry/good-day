@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
+import { COLORS } from "./src/common/constants";
 import { IReason } from "./src/common/interface";
 import Footer from "./src/components/footer/Footer";
 import Header from "./src/components/header/Header";
@@ -34,7 +35,10 @@ export default function App() {
         positiveList={positiveList}
         removeReason={removeReason}
       />
-      <Footer />
+      <Footer
+        positiveCount={positiveList?.length}
+        negativeCount={negativeList?.length}
+      />
       <StatusBar style="auto" />
     </View>
   );
@@ -44,7 +48,7 @@ const styles = StyleSheet.create({
   containerStyle: {
     flex: 1,
     paddingTop: 30,
-    backgroundColor: "#fff",
+    backgroundColor: COLORS.white,
     alignItems: "center",
     justifyContent: "center",
   },

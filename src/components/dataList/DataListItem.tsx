@@ -1,6 +1,8 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { COLORS } from "../../common/constants";
 import { IReason } from "../../common/interface";
+import FadeInView from "../animations/FadeInView";
 import CustomButton from "../customButton/CustomButton";
 
 interface IProps extends IReason {
@@ -15,12 +17,12 @@ export default function DataListItem({ id, text, onRemove }: IProps) {
     padding: 0,
     fontSize: 25,
     backgroundColor: "transparent",
-    color: "#fff",
+    color: COLORS.white,
     borderWidth: 1,
-    borderColor: "#fff",
+    borderColor: COLORS.white,
   };
   return (
-    <View style={styles.containerStyle}>
+    <FadeInView style={containerStyle}>
       <CustomButton
         text={"-"}
         customStyle={buttonStyle}
@@ -31,10 +33,14 @@ export default function DataListItem({ id, text, onRemove }: IProps) {
           {text}
         </Text>
       </View>
-    </View>
+    </FadeInView>
   );
 }
-
+const containerStyle = {
+  flexDirection: "row",
+  alignItems: "center",
+  marginVertical: 3,
+};
 const styles = StyleSheet.create({
   containerStyle: {
     flexDirection: "row",
@@ -47,9 +53,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 5,
   },
   textStyle: {
-    // fontFamily: "Roboto",
     fontWeight: "bold",
-    color: "#fff",
+    color: COLORS.white,
     fontSize: 20,
   },
 });
